@@ -14,7 +14,7 @@ public class ProdutosComida extends Produtos {
         super();
     }
     
-    public ProdutosComida(String nome, Double preco, Integer quantidade, TempoProduto tempoProduto, Date fabricacao, Date validade) {
+    public ProdutosComida(String nome, Double preco, Integer quantidade, String tempoProduto, Date fabricacao, Date validade) {
         super(nome, preco, quantidade, tempoProduto);
         this.fabricacao = fabricacao;
         this.validade = validade;
@@ -45,6 +45,16 @@ public class ProdutosComida extends Produtos {
         else {
             return "VENCIDO";
         }
+    }
+
+    @Override
+    public String toString() {
+        return "\nNome: " + getNome() +
+            " Preco: R$" + getPreco() +
+            " Quantidade: " + getQuantidade() +
+            " Idade: " + getTempoProduto() +
+            " Fabricação: " + sdf.format(fabricacao) +
+            " Validade: " + sdf.format(validade);
     }
     // METODOS
     

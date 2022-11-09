@@ -13,7 +13,7 @@ public class ProdutosObjeto extends Produtos {
         super();
     }
 
-    public ProdutosObjeto(String nome, Double preco, Integer quantidade, TempoProduto tempoProduto, Double largura, Double altura, Double profundidade) {
+    public ProdutosObjeto(String nome, Double preco, Integer quantidade, String tempoProduto, Double largura, Double altura, Double profundidade) {
         super(nome, preco, quantidade, tempoProduto);
         this.largura = largura;
         this.altura = altura;
@@ -47,6 +47,18 @@ public class ProdutosObjeto extends Produtos {
     // METODOS
     public Double area(){
         return getAltura() * getLargura() * getProfundidade();
+    }
+
+    @Override
+    public String toString() {
+        return "\nNome: " + getNome() +
+            " Preco: R$" + getPreco() +
+            " Quantidade: " + getQuantidade() +
+            " Idade: " + getTempoProduto() +
+            " Largura: " + largura +
+            " Altura: " + altura + 
+            " Profundidade: " + profundidade;
+    
     }
     // METODOS
 

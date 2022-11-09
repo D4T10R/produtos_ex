@@ -16,11 +16,16 @@ public abstract class Produtos {
     public Produtos() {
     }
 
-    public Produtos(String nome, Double preco, Integer quantidade, TempoProduto tempoProduto) {
+    public Produtos(String nome, Double preco, Integer quantidade, String tempoProduto) {
         this.nome = nome;
         this.preco = preco;
         this.quantidade = quantidade;
-        this.tempoProduto = tempoProduto;
+        if (tempoProduto == "VELHO") {
+            this.tempoProduto = TempoProduto.VELHO;
+        }
+        else {
+            this.tempoProduto = TempoProduto.NOVO;
+        }
     }
     // CONSTRUTORES
 
@@ -54,6 +59,14 @@ public abstract class Produtos {
     // METODOS
     public Double totalProduto() {
         return preco * quantidade;
+    }
+
+    @Override
+    public String toString() {
+        return "\nNome: " + nome +
+            "Preco: R$" + preco +
+            "Quantidade: " + quantidade +
+            "Idade: " + tempoProduto;
     }
     // METODOS
     

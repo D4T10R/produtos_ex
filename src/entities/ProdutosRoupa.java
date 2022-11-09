@@ -15,7 +15,7 @@ public class ProdutosRoupa extends Produtos {
         this.tamanho = tamanho;
     }
 
-    public ProdutosRoupa(String nome, Double preco, Integer quantidade, TempoProduto tempoProduto, int tamanho) {
+    public ProdutosRoupa(String nome, Double preco, Integer quantidade, String tempoProduto, int tamanho) {
         super(nome, preco, quantidade, tempoProduto);
         this.tamanho = tamanho;
     }
@@ -51,6 +51,16 @@ public class ProdutosRoupa extends Produtos {
         else {
             return "Não existe ou é personalizado";
         }
+    }
+
+    @Override
+    public String toString() {
+        return "\nNome: " + getNome() +
+            " Preco: R$" + getPreco() +
+            " Quantidade: " + getQuantidade() +
+            " Idade: " + getTempoProduto() +
+            " Tamanho: " + getTamanho();
+    
     }
     // METODO
     
