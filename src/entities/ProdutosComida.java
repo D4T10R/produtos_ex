@@ -7,6 +7,7 @@ public class ProdutosComida extends Produtos {
     // ATRIBUTOS
     private Date fabricacao;
     private Date validade;
+    private Date dataAtual = new Date();
     // ATRIBUTOS
     
     // CONSTRUTORES
@@ -38,12 +39,12 @@ public class ProdutosComida extends Produtos {
     // ENCAPSULAMENTO
 
     // METODOS
-    public String validadeAtual(Date dataAtual) {
+    public String validadeAtual() {
         if (validade.compareTo(dataAtual) < 0 || validade.compareTo(dataAtual) == 0) {
-            return "VALIDO";
+            return "VENCIDO";
         }
         else {
-            return "VENCIDO";
+            return "VALIDO";
         }
     }
 
@@ -54,7 +55,8 @@ public class ProdutosComida extends Produtos {
             " Quantidade: " + getQuantidade() +
             " Idade: " + getTempoProduto() +
             " Fabricação: " + sdf.format(fabricacao) +
-            " Validade: " + sdf.format(validade);
+            " Validade: " + sdf.format(validade) + 
+            " Validade Atual: " + validadeAtual();
     }
     // METODOS
     

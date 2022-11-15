@@ -33,24 +33,19 @@ public class ProdutosRoupa extends Produtos {
 
     // METODO
     public String tipoDeTamanho(){
-        if (tamanho > 0 && tamanho <= 15) {
+
+        if (tamanho > 0 && tamanho <= 15) 
             return "infantil";
-        }
-        else if (tamanho > 15 && tamanho <= 30) {
+        else if (tamanho > 15 && tamanho <= 30) 
             return "pequeno";
-        }
-        else if (tamanho > 30 && tamanho <= 60) {
+        else if (tamanho > 30 && tamanho <= 60) 
             return "medio";
-        }
-        else if (tamanho > 60 && tamanho <= 100) {
+        else if (tamanho > 60 && tamanho <= 100) 
             return "grande";
-        }
-        else if (tamanho > 100 & tamanho <= 200) {
-            return "gigante";
-        }
-        else {
-            return "Não existe ou é personalizado";
-        }
+        else if (tamanho > 100 & tamanho <= 200) 
+            return "gigante";       
+        return "Não existe ou é personalizado";
+        
     }
 
     @Override
@@ -59,7 +54,7 @@ public class ProdutosRoupa extends Produtos {
             " Preco: R$" + getPreco() +
             " Quantidade: " + getQuantidade() +
             " Idade: " + getTempoProduto() +
-            " Tamanho: " + getTamanho();
+            " Tamanho: " + tipoDeTamanho();
     
     }
     // METODO

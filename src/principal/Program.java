@@ -1,7 +1,9 @@
 package principal;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
@@ -101,17 +103,28 @@ public class Program {
 
         // GRAVAR NO ARQUIVO
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(file, true))) {
-            bw.write(produtos.toString());
+            bw.write("\n" +    produtos.toString());
         }
         catch (IOException e) {
             e.printStackTrace();
         }
 
+        // EXIBIR O ARQUIVO
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            while (br.ready()) {
+                String linha = br.readLine();
+                System.out.println(linha);
+            }
+            br.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
       
 
 
 
-
+        // D4T10R
     }
 
 }

@@ -57,7 +57,8 @@ public class ProdutosObjeto extends Produtos {
             " Idade: " + getTempoProduto() +
             " Largura: " + largura +
             " Altura: " + altura + 
-            " Profundidade: " + profundidade;
+            " Profundidade: " + profundidade +
+            " Area: " + area();
     
     }
     // METODOS
